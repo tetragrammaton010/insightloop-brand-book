@@ -4,117 +4,370 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>InsightLoop — Brand Book v1 (20.10.2025)</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    :root{--p:#1B2A41;--s:#6B7280;--a:#F97316;--bg:#F9FAFB;--sf:#fff;--ok:#10B981;--warn:#F59E0B;--info:#6366F1;--w:980px;--r:16px;--sh:0 8px 24px rgba(0,0,0,.06)}
-    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#111}
+    :root{
+      --p:#1B2A41;   /* Primary Deep Blue */
+      --s:#6B7280;   /* Secondary Slate Grey */
+      --a:#F97316;   /* Accent Signal Orange */
+      --bg:#F9FAFB;  /* Background Off-White */
+      --sf:#FFFFFF;  /* Surface White */
+      --ok:#10B981;  /* Success Emerald */
+      --wr:#F59E0B;  /* Warning Amber */
+      --in:#6366F1;  /* Info Indigo */
+      --w:980px; --r:16px; --sh:0 8px 24px rgba(0,0,0,.06)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:#111}
     body{font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-    header{position:sticky;top:0;background:var(--sf);border-bottom:1px solid #E5E7EB}
-    .top{max-width:var(--w);margin:0 auto;padding:10px 20px;text-align:center;color:var(--s);font-size:12px}
+    a{color:var(--p);text-decoration:none} a:hover{text-decoration:underline}
+
+    header{position:sticky;top:0;background:var(--sf);border-bottom:1px solid #E5E7EB;z-index:10}
+    .top{max-width:var(--w);margin:0 auto;padding:10px 20px;text-align:center;color:#6B7280;font-size:12px}
+
+    nav{background:var(--sf);border-bottom:1px solid #E5E7EB}
+    .toc{max-width:var(--w);margin:0 auto;padding:10px 20px;font-size:14px;display:flex;flex-wrap:wrap;gap:10px}
+    .toc a{color:#374151}
+
     .wrap{max-width:var(--w);margin:24px auto 80px;padding:0 20px}
     .card{background:var(--sf);border:1px solid #E5E7EB;border-radius:var(--r);box-shadow:var(--sh);padding:28px;margin:18px 0}
-    h1,h2,h3{font-family:Sora,Inter,sans-serif;margin:0 0 12px;color:var(--p)}h1{font-size:32px}h2{font-size:24px}h3{font-size:18px;color:#111}
-    .meta{color:var(--s);font-size:14px;margin-bottom:6px}.blockquote{border-left:4px solid var(--a);padding-left:12px;color:#374151}
-    table{width:100%;border-collapse:collapse;font-size:14px}th,td{border:1px solid #E5E7EB;padding:10px;vertical-align:top}th{background:#F3F4F6;text-align:left}
-    .sw{display:inline-block;width:140px;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden;margin:6px 10px 6px 0}
-    .sw>div:first-child{height:56px}.sw>div:last-child{padding:8px 10px;font-size:12px;background:var(--sf)}
+
+    h1,h2,h3{font-family:Sora,Inter,sans-serif;margin:0 0 12px;color:var(--p)}
+    h1{font-size:32px;line-height:1.2}
+    h2{font-size:24px}
+    h3{font-size:18px;color:#111}
+    .meta{color:var(--s);font-size:14px;margin-bottom:6px}
+    .blockquote{border-left:4px solid var(--a);padding-left:12px;color:#374151}
+
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{border:1px solid #E5E7EB;padding:10px;vertical-align:top}
+    th{background:#F3F4F6;text-align:left}
+
+    .sw{display:inline-block;width:140px;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden;margin:6px 10px 6px 0;background:var(--sf)}
+    .sw>div:first-child{height:56px}
+    .sw>div:last-child{padding:8px 10px;font-size:12px}
+
     .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600}
-    .ok{background:rgba(16,185,129,.12);color:var(--ok)}.inf{background:rgba(99,102,241,.12);color:var(--info)}
+    .ok{background:rgba(16,185,129,.12);color:var(--ok)}
+    .warn{background:rgba(245,158,11,.12);color:var(--wr)}
+    .info{background:rgba(99,102,241,.12);color:var(--in)}
+
+    .grid{display:grid;gap:16px}
+    @media(min-width:960px){ .cols-2{grid-template-columns:1fr 1fr} }
+
     footer{margin:48px 0 0;text-align:center;color:var(--s);font-size:12px}
-    a{color:var(--p);text-decoration:none}a:hover{text-decoration:underline}
+    .small{font-size:12px;color:var(--s)}
   </style>
 </head>
 <body>
-<header><div class="top">From Data to Direction • InsightLoop Brand System</div></header>
+
+<header>
+  <div class="top">From Data to Direction • InsightLoop Brand System</div>
+</header>
+
+<nav>
+  <div class="toc">
+    <a href="#intro">Intro</a> •
+    <a href="#ziel">Ziel & Nutzen</a> •
+    <a href="#personas">Personas</a> •
+    <a href="#vp">Value Proposition</a> •
+    <a href="#voice">Voice & Tone</a> •
+    <a href="#farben">Farbpalette</a> •
+    <a href="#typo">Typografie</a> •
+    <a href="#logo">Logo-Konzept</a> •
+    <a href="#ui">UI-Patterns</a> •
+    <a href="#samples">Beispieltexte</a> •
+    <a href="#log">Arbeitstagebuch</a> •
+    <a href="#portfolio">Portfolio-Card</a>
+  </div>
+</nav>
+
 <main class="wrap">
-  <section class="card">
+
+  <!-- Intro -->
+  <section id="intro" class="card">
     <h1>INSIGHTLOOP — BRAND BOOK v1 (Final)</h1>
     <div class="meta">Projekt: InsightLoop Creative Briefs · Typ: GPT-integriertes Dashboard · Datum: 20.10.2025</div>
-    <p class="blockquote"><strong>USP:</strong> Automatisierte Kreativstrategie aus Performance-Daten (nicht nur Reporting). Tägliche Creative Briefs in < 5 Min.</p>
-    <p>InsightLoop Creative Briefs liefert Performance Leads & Sales Directors klare Handlungsempfehlungen, zugeschnitten auf Kampagnenziele, Creatives und Marktverhalten.</p>
+    <p class="blockquote">
+      InsightLoop Creative Briefs ist ein GPT-integriertes Dashboard für Performance Leads und Sales Directors in AdTech-Agenturen,
+      das tägliche Creative Briefs mit konkreten Handlungsempfehlungen liefert – zugeschnitten auf Kampagnenziele, Creatives und Marktverhalten.
+      Nutzer erhalten in &lt; 5 Minuten klare Insights zu Performance-Treibern, kreative Next Steps und datenbasierte Hypothesen.
+      <strong>USP:</strong> automatisierte Kreativstrategie aus Performance-Daten, nicht nur Reporting.
+    </p>
   </section>
 
-  <section class="card">
+  <!-- Ziel & Nutzen -->
+  <section id="ziel" class="card">
     <h2>1️⃣ Ziel und Nutzen des Brand Books</h2>
-    <table>
-      <tr><th>Ziel</th><td>Einheitliche Markenidentität für Vertrauen, Relevanz, Klarheit im AdTech/SaaS-Umfeld.</td></tr>
-      <tr><th>Nutzen</th><td>Alignment Prod/Marketing/Sales · Konsistenz · Vertrauen durch klare Sprache/Design · Schnellere Asset-Produktion</td></tr>
-      <tr><th>Fehler vermeiden</th><td>Generische Claims · Überladenes Design · Inkonsistente Sprache · Kein echter Nutzerwert aus „GPT“</td></tr>
-    </table>
+    <div class="grid cols-2">
+      <div>
+        <h3>Ziel</h3>
+        Einheitliche Markenidentität, die Vertrauen, Relevanz und Klarheit im datengetriebenen AdTech/SaaS-Umfeld vermittelt.
+        <h3>Nutzen</h3>
+        <ul>
+          <li>Schnelles Alignment zwischen Produkt, Marketing und Sales</li>
+          <li>Konsistente Markenwirkung (intern/extern)</li>
+          <li>Höheres Vertrauen durch klare Sprache & Design</li>
+          <li>Effizientere Produktion von Assets, Demos und Go-to-Market-Material</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kern-Elemente</h3>
+        <ul>
+          <li>Brand Purpose & Mission</li>
+          <li>Value Proposition & Messaging</li>
+          <li>Tonalität & Sprachprinzipien</li>
+          <li>Visuelle Grundelemente (Logo, Farben, Typografie, UI)</li>
+          <li>Anwendungsrichtlinien (Slides, Website, Sales-Kits)</li>
+        </ul>
+        <h3>Typische Fehler</h3>
+        <ul>
+          <li>Generische Claims, überladenes Design, Inkonsistenz</li>
+          <li>Keine Übersetzung von „GPT“ in echten Nutzerwert</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section class="card">
+  <!-- Personas -->
+  <section id="personas" class="card">
     <h2>2️⃣ Personas</h2>
     <table>
       <thead><tr><th>Persona</th><th>Ziele</th><th>Pain Points</th><th>KPIs</th><th>JTBD</th></tr></thead>
       <tbody>
-        <tr><td><b>Performance Lead</b> (AdTech)</td><td>Datenbasierte Optimierung; präzise Briefings</td><td>Zu viele Quellen; Zeitdruck</td><td>ROAS, CTR, CPA, Fatigue</td><td>„Gib mir in 5 Min ein Briefing mit sofortigen Maßnahmen.“</td></tr>
-        <tr><td><b>Sales Lead</b> (B2B)</td><td>Win-Rate steigern; proaktive Vorschläge</td><td>Wenig datenbasierte Argumente</td><td>Win-Rate, Cycle-Time</td><td>„Übersetze Insights in pitchfähige Argumente < 5 Min täglich.“</td></tr>
+        <tr>
+          <td><strong>Performance Lead</strong> (AdTech-Agentur)</td>
+          <td>Kampagnen datenbasiert optimieren; Kreativteams präzise briefen</td>
+          <td>Zu viele Quellen, keine Story; Zeitdruck</td>
+          <td>ROAS, CTR, CPA, Creative-Fatigue; TTI &lt; 10 Min/Tag</td>
+          <td>„Gib mir in 5 Min ein Briefing mit sofortigen Maßnahmen.“</td>
+        </tr>
+        <tr>
+          <td><strong>Sales Lead</strong> (B2B-SaaS)</td>
+          <td>Pitch-Gewinnrate steigern; proaktive Creative-Vorschläge</td>
+          <td>Mangel an datenbasierten Argumenten</td>
+          <td>Win-Rate, Cycle-Time</td>
+          <td>„Übersetze Insights in pitchfähige Argumente &lt; 5 Min täglich.“</td>
+        </tr>
       </tbody>
     </table>
   </section>
 
-  <section class="card">
+  <!-- Value Proposition -->
+  <section id="vp" class="card">
     <h2>3️⃣ Value Proposition</h2>
     <table>
-      <thead><tr><th>Zielgruppe</th><th>Value Proposition</th><th>KPI</th></tr></thead>
+      <thead><tr><th>Zielgruppe</th><th>Value Proposition</th><th>KPI-Beispiel</th></tr></thead>
       <tbody>
-        <tr><td>AdTech-Teams</td><td>„Performance-Daten → kreative Handlungsstrategien: klar, messbar, umsetzbar.“</td><td><span class="badge ok">+18 % CTR</span> in Woche 1</td></tr>
-        <tr><td>Sales-Leads</td><td>„Pitch-Argumente in Minuten – Reporting wird Handlung.“</td><td><span class="badge inf">-22 % Sales-Zyklus</span></td></tr>
+        <tr>
+          <td>AdTech-Teams</td>
+          <td>„InsightLoop übersetzt Performance-Daten in kreative Handlungsstrategien – klar, messbar, umsetzbar.“</td>
+          <td><span class="badge ok">+18 % CTR</span> in Woche 1 (Re-Briefing)</td>
+        </tr>
+        <tr>
+          <td>Sales-Leads</td>
+          <td>„InsightLoop liefert datenbasierte Pitch-Argumente in Minuten – Reporting wird Handlung.“</td>
+          <td><span class="badge info">-22 % Sales-Zyklus</span> bei Neukunden</td>
+        </tr>
       </tbody>
     </table>
   </section>
 
-  <section class="card">
+  <!-- Voice & Tone -->
+  <section id="voice" class="card">
     <h2>4️⃣ Voice & Tone</h2>
     <ul>
-      <li><b>Klar vor clever:</b> Verstehen in 3 Sekunden</li>
-      <li><b>Daten als Dialog:</b> einordnen, nicht belehren</li>
-      <li><b>Präzision:</b> keine Floskeln</li>
-      <li><b>Empathisch:</b> Druck anerkennen, ohne Buddy-Ton</li>
-      <li><b>Handlungsorientiert:</b> nächste Schritte</li>
-      <li><b>Nützlich in jedem Satz</b></li>
+      <li><strong>Klar über clever:</strong> Verstehen in 3 Sekunden</li>
+      <li><strong>Daten als Dialog:</strong> einordnen, nicht belehren</li>
+      <li><strong>Präzision:</strong> keine Floskeln</li>
+      <li><strong>Empathisch:</strong> Druck anerkennen, ohne Buddy-Ton</li>
+      <li><strong>Handlungsorientiert:</strong> nächste Schritte</li>
+      <li><strong>Nützlich in jedem Satz</strong></li>
+    </ul>
+    <table>
+      <thead><tr><th>Do</th><th>Don’t</th></tr></thead>
+      <tbody>
+        <tr><td>„Die Conversion-Rate ist um 12 % gestiegen – dank klarer Callouts.“</td><td>„Wow! Beeindruckende Zahlen, oder?“</td></tr>
+        <tr><td>„Empfohlenes Creative: Kurzformat mit klarer Value Prop.“</td><td>„Probieren Sie vielleicht ein anderes Format?“</td></tr>
+        <tr><td>„Brief aktualisiert – Fokus: Top-3 Converters der letzten 24h.“</td><td>„GPT hat neue Inhalte für Sie generiert!“</td></tr>
+      </tbody>
+    </table>
+    <p class="small"><em>Beispiele:</em> Tagline „Tägliche Creative Insights, die wirklich performen.“ · CTA „Brief jetzt anzeigen“ · Tooltip „Basiert auf den Top-Performern der letzten 24 h“ · Warnung „Keine ausreichenden Daten …“ · Erfolg „Creative Brief erfolgreich aktualisiert …“ · Leerzustand „Noch keine Daten für heute …“</p>
+  </section>
+
+  <!-- Farbpalette -->
+  <section id="farben" class="card">
+    <h2>5️⃣ Farbpalette</h2>
+    <div class="sw"><div style="background:#1B2A41"></div><div>Primary · #1B2A41 · Headlines, CTAs</div></div>
+    <div class="sw"><div style="background:#6B7280"></div><div>Secondary · #6B7280 · Labels, Meta</div></div>
+    <div class="sw"><div style="background:#F97316"></div><div>Accent · #F97316 · Highlights/Empfehlungen</div></div>
+    <div class="sw"><div style="background:#F9FAFB;border-bottom:1px solid #E5E7EB"></div><div>Background · #F9FAFB · Dashboard-Hintergrund</div></div>
+    <div class="sw"><div style="background:#FFFFFF;border-bottom:1px solid #E5E7EB"></div><div>Surface · #FFFFFF · Karten/Modals</div></div>
+    <div class="sw"><div style="background:#10B981"></div><div>Success · #10B981 · Positive KPI</div></div>
+    <div class="sw"><div style="background:#F59E0B"></div><div>Warning · #F59E0B · Alerts/Low Signal</div></div>
+    <div class="sw"><div style="background:#6366F1"></div><div>Info · #6366F1 · Kontext/Updates</div></div>
+    <p class="small">WCAG AA-Check (Text auf Hell): Primary/Secondary/Accent erfüllen AA; Statusfarben bei Icons/Labels ≥14px oder bold.</p>
+  </section>
+
+  <!-- Typografie -->
+  <section id="typo" class="card">
+    <h2>6️⃣ Typografie</h2>
+    <p><strong>Headings:</strong> Sora · <strong>Body:</strong> Inter · Ziel: hohe Lesbarkeit & klare Hierarchie.</p>
+    <table>
+      <thead><tr><th>Verwendung</th><th>Schrift</th><th>Größe</th><th>Line-Height</th><th>Tracking</th></tr></thead>
+      <tbody>
+        <tr><td>H1</td><td>Sora 600</td><td>32px</td><td>40px</td><td>-1 %</td></tr>
+        <tr><td>H2</td><td>Sora 600</td><td>24px</td><td>32px</td><td>-1 %</td></tr>
+        <tr><td>H3</td><td>Sora 600</td><td>20px</td><td>28px</td><td>-0.5 %</td></tr>
+        <tr><td>Body</td><td>Inter 400</td><td>14px</td><td>20px</td><td>0</td></tr>
+        <tr><td>Caption</td><td>Inter 400</td><td>12px</td><td>16px</td><td>+2 %</td></tr>
+        <tr><td>Zahlen/KPI</td><td>Inter 500</td><td>20–24px</td><td>28–32px</td><td>-1 %</td></tr>
+      </tbody>
+    </table>
+    <ul class="small">
+      <li>Weißraum um Zahlen & Headlines ≥16px</li>
+      <li>KPIs nie kleiner als 20px</li>
+      <li>Farbcodierung + Typo-Hierarchie kombinieren (z. B. Orange für Empfehlungen + H3)</li>
     </ul>
   </section>
 
-  <section class="card">
-    <h2>5️⃣ Farbpalette</h2>
-    <div class="sw"><div style="background:#1B2A41"></div><div>Primary · #1B2A41</div></div>
-    <div class="sw"><div style="background:#6B7280"></div><div>Secondary · #6B7280</div></div>
-    <div class="sw"><div style="background:#F97316"></div><div>Accent · #F97316</div></div>
-    <div class="sw"><div style="background:#F9FAFB;border-bottom:1px solid #E5E7EB"></div><div>Background · #F9FAFB</div></div>
-    <div class="sw"><div style="background:#FFFFFF;border-bottom:1px solid #E5E7EB"></div><div>Surface · #FFFFFF</div></div>
-    <div class="sw"><div style="background:#10B981"></div><div>Success · #10B981</div></div>
-    <div class="sw"><div style="background:#F59E0B"></div><div>Warning · #F59E0B</div></div>
-    <div class="sw"><div style="background:#6366F1"></div><div>Info · #6366F1</div></div>
+  <!-- Logo-Konzept -->
+  <section id="logo" class="card">
+    <h2>8️⃣ Logo-Konzept</h2>
+    <p><strong>Metapher:</strong> fokussiertes Sichtfeld („Insight“) im Umlauf datenbasierter Impulse („Loop“) — Klarheit im Strom der Komplexität.</p>
+    <p><strong>Formprinzip:</strong> Kreisfragment/abstrahierter Loop mit präzisem „Cut“ als Blickpunkt.</p>
+    <p><strong>Negativraum:</strong> stilisierte Linse/Pfeil für Richtung & Fokus.</p>
+    <p><strong>Primärfarbe:</strong> Deep Blue #1B2A41 (Stabilität, Fokus).</p>
+    <p><strong>Skalierung:</strong> reduzierte Geometrie, im Favicon (16×16) erkennbar; Loop als App-Icon nutzbar.</p>
+    <p><strong>SW-Tauglichkeit:</strong> keine Verläufe, klare Flächen; invertiert auf dunkel ok.</p>
+    <p><strong>Verbote:</strong> kein Gehirn/Roboter/Wolke; keine offenen Kreise ohne Fokus; keine Typo-Spielereien.</p>
+    <p class="small"><em>Ziel:</em> Symbol für Kontrolle im Datenrauschen – präzise, modern, memorierbar.</p>
   </section>
 
-  <section class="card">
-    <h2>6️⃣ Typografie</h2>
+  <!-- UI-Patterns -->
+  <section id="ui" class="card">
+    <h2>9️⃣ UI-Patterns (Textrichtlinien)</h2>
+    <p>Ziel: klare, sofort erfassbare Sprache für tägliche Briefs im AdTech/Sales-Kontext.</p>
     <table>
-      <thead><tr><th>Verwendung</th><th>Schrift</th><th>Größe</th><th>LH</th><th>Tracking</th></tr></thead>
+      <thead><tr><th>Element</th><th>Zweck</th><th>Inhalt/Länge</th><th>Stilregeln</th><th>Beispiel</th></tr></thead>
       <tbody>
-        <tr><td>H1</td><td>Sora 600</td><td>32px</td><td>40px</td><td>-1%</td></tr>
-        <tr><td>H2</td><td>Sora 600</td><td>24px</td><td>32px</td><td>-1%</td></tr>
-        <tr><td>Body</td><td>Inter 400</td><td>14px</td><td>20px</td><td>0</td></tr>
-        <tr><td>Zahlen/KPI</td><td>Inter 500</td><td>20–24px</td><td>28–32px</td><td>-1%</td></tr>
+        <tr>
+          <td>KPI-Card</td>
+          <td>zentrale Metriken kompakt</td>
+          <td>KPI + Wert + Vergleich; 1–2 Zeilen / &lt;25 Zeichen</td>
+          <td>Zahlen zuerst; Einheit konsistent; ↑/↓ Pflicht</td>
+          <td>„CTR: 4,2 % ↑ +12 %“</td>
+        </tr>
+        <tr>
+          <td>Trend-Sparkline</td>
+          <td>Mini-Verlauf</td>
+          <td>Zeitraum; optional Kurzbeschreibung</td>
+          <td>Neutral; keine Interpretation im Label</td>
+          <td>„Letzte 7 Tage“</td>
+        </tr>
+        <tr>
+          <td>Insight-Badge</td>
+          <td>Muster markieren</td>
+          <td>2–3 Wörter</td>
+          <td>Titel-Case; keine Emojis/Sätze</td>
+          <td>„Creative Fatigue“</td>
+        </tr>
+        <tr>
+          <td>Recommendation-Block</td>
+          <td>konkrete Maßnahme</td>
+          <td>1 Satz, max. 90 Zeichen</td>
+          <td>aktiv, präzise; kein „könnte“; GPT nicht erwähnen</td>
+          <td>„Kurzformate mit USP testen – +18 % VTR“</td>
+        </tr>
+        <tr>
+          <td>Alert-Banner</td>
+          <td>Datenprobleme/Risiken</td>
+          <td>max. 80 Zeichen</td>
+          <td>direkt, lösungsorientiert, ohne Alarmismus</td>
+          <td>„Datenvolumen zu gering für Trends.“</td>
+        </tr>
+        <tr>
+          <td>Filter-Pills</td>
+          <td>aktive Filter zeigen</td>
+          <td>max. 15 Zeichen</td>
+          <td>Titel-Case, konsistente Abkürzungen</td>
+          <td>„Last 7 Days“, „Meta Only“, „CPL &lt; €10“</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="small">
+      <li>Erfassen in &lt;3 s · Zahlen führen den Blick</li>
+      <li>Empfehlungen = Handlung, nicht Interpretation</li>
+      <li>Alle Texte AA-konform (visuell & sprachlich)</li>
+    </ul>
+  </section>
+
+  <!-- Beispieltexte -->
+  <section id="samples" class="card">
+    <h2>🔟 Beispieltexte (Conversion Copy)</h2>
+    <h3>Taglines</h3>
+    <ol>
+      <li>„Jeden Tag ein Creative-Brief, der zählt.“</li>
+      <li>„Was heute wirkt – in 5 Minuten verstanden.“</li>
+      <li>„Von Performance-Daten zu kreativen Entscheidungen.“</li>
+    </ol>
+    <h3>CTA-Buttons</h3>
+    <ol>
+      <li>„Brief jetzt anzeigen“</li>
+      <li>„Tägliche Empfehlung holen“</li>
+      <li>„Insights aktualisieren“</li>
+      <li>„Creative-Vorschläge ansehen“</li>
+      <li>„Neue Brief-Periode starten“</li>
+    </ol>
+    <h3>Empty States</h3>
+    <ol>
+      <li>„Noch keine Kampagnenaktivität – starten Sie mit ersten Creatives.“</li>
+      <li>„Heute keine validen Daten – morgen mehr Signal.“</li>
+      <li>„Briefing kommt, sobald erste KPIs vorliegen.“</li>
+    </ol>
+    <h3>Alerts</h3>
+    <ol>
+      <li>„Keine Creatives mit ausreichend Impressionen – wir prüfen morgen erneut.“</li>
+      <li>„Datenvolumen aktuell zu gering für Trends.“</li>
+      <li>„Creative Fatigue erkannt – neue Formate empfohlen.“</li>
+    </ol>
+    <p class="small"><strong>Grundregel:</strong> Jede Zeile unterstützt eine Entscheidung. Kein Buzzword. Kein Versprechen ohne Kontext.</p>
+  </section>
+
+  <!-- Arbeitstagebuch -->
+  <section id="log" class="card">
+    <h2>🕒 Arbeitstagebuch</h2>
+    <table>
+      <thead><tr><th>Datum</th><th>Aufgabe</th><th>Ergebnis</th><th>Kommentar</th></tr></thead>
+      <tbody>
+        <tr><td>20.10.2025</td><td>Projektbeschreibung & Value Proposition</td><td>✔ Fertiggestellt</td><td>Sehr klarer USP, gute Struktur</td></tr>
+        <tr><td>21.10.2025</td><td>Personas & Voice-and-Tone</td><td>✔ Abgeschlossen</td><td>Gute Differenzierung AdTech/Sales</td></tr>
+        <tr><td>22.10.2025</td><td>Farbpalette & Typografie</td><td>🔄 Anpassung</td><td>Secondary ggf. etwas dunkler</td></tr>
+        <tr><td>23.10.2025</td><td>UI-Patterns & Copy-Beispiele</td><td>✔ Final</td><td>Saubere, prägnante Sprache</td></tr>
+        <tr><td>24.10.2025</td><td>Zusammenführung in Brand Book v1</td><td>✔ Eingereicht</td><td>Bereit für Feedback & Portfolio</td></tr>
       </tbody>
     </table>
   </section>
 
-  <section class="card">
-    <h2>7️⃣ UI-Patterns (Textrichtlinien)</h2>
+  <!-- Portfolio Card -->
+  <section id="portfolio" class="card">
+    <h2>📘 Portfolio-Card</h2>
     <table>
-      <thead><tr><th>Element</th><th>Zweck</th><th>Regeln</th><th>Beispiel</th></tr></thead>
-      <tbody>
-        <tr><td>KPI-Card</td><td>Top-Metriken</td><td>Zahlen zuerst, Einheit konsistent</td><td>„CTR: 4,2 % ↑ +12 %“</td></tr>
-        <tr><td>Recommendation</td><td>Konkrete Maßnahme</td><td>Aktiv, präzise, kein „könnte“</td><td>„Kurzformate mit USP testen – +18 % VTR“</td></tr>
-        <tr><td>Alert</td><td>Risiken/Datenlücken</td><td>Direkt, lösungsorientiert</td><td>„Datenvolumen zu gering für Trends.“</td></tr>
-      </tbody>
+      <tr><th>Situation</th><td>InsightLoop benötigte konsistente Markenbasis für das AdTech-Modul „Creative Briefs“.</td></tr>
+      <tr><th>Lösung</th><td>Entwicklung eines klaren Brand Books (Voice, UI, Farbwelt, Copy, Typo) mit GPT-Unterstützung.</td></tr>
+      <tr><th>Ergebnis</th><td>Einheitliches Branding für Marketing & Sales; sofort einsetzbar in Produkt-Demos.</td></tr>
+      <tr><th>Mehrwert</th><td>~50 % Zeitersparnis bei Content-Erstellung; konsistente Nutzererfahrung über Teams hinweg.</td></tr>
     </table>
   </section>
+
 </main>
-<footer>© 2025 InsightLoop — Brand Book v1 · Kontakt: team@insightloop.example</footer>
+
+<footer>
+  © 2025 InsightLoop — Brand Book v1 · Kontakt: team@insightloop.example
+</footer>
+
 </body>
 </html>
-
